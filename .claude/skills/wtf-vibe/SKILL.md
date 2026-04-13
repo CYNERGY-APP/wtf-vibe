@@ -86,11 +86,15 @@ Claude Code streams your text output to the user character-by-character. Use thi
 
 **Bar:** 10 chars, `█` for filled and `░` for empty. Score 78 → `████████░░`. Score 23 → `██░░░░░░░░`.
 
-**Score emoji** (per dimension polarity):
+**Score emoji** (per dimension — each has its own ladder):
 
-For **Chaos** and **Ego** (low is good): 0-20 `🎁`, 21-40 `🙂`, 41-60 `😐`, 61-80 `😰`, 81-100 `🔥`
-
-For **Trust** and **Karma** (high is good): 0-20 `💀`, 21-40 `😬`, 41-60 `😐`, 61-80 `🙂`, 81-100 `🎁`
+| Score | Chaos | Ego | Trust | Karma |
+|-------|-------|-----|-------|-------|
+| 0-20  | 🧘 | 🤝 | 🚨 | 💀 |
+| 21-40 | 🌿 | 🎓 | 😬 | 😤 |
+| 41-60 | 🏚️ | 🤔 | 🤞 | 😐 |
+| 61-80 | 😰 | 🧠 | 😌 | 🙂 |
+| 81-100| 🔥 | 🌌 | 😴 | 🎁 |
 
 **Energy emojis:** Sunny `☀️`, Clear `🌤️`, Cloudy `🌥️`, Stormy `⛈️`, Hurricane `🌀`
 

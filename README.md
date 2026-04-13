@@ -99,7 +99,7 @@ You will scroll past this. You know you will.
 🎰  W T F   V I B E  🎰
 
   Chaos Index    ████████░░  78/100  😰
-  Ego Score      ██░░░░░░░░  23/100  🤝
+  Ego Score      ██░░░░░░░░  23/100  🎓
   Trust Factor   ███░░░░░░░  29/100  😬
   Karma          ████░░░░░░  41/100  😐
   Energy         ⛈️  Stormy
@@ -261,10 +261,10 @@ Five scores. No other tool measures these. That's the point.
 ```
 🎰  W T F   V I B E  🎰   ·   src/core
 
-  Chaos Index    ████░░░░░░  41/100  😐
-  Ego Score      █████████░  89/100  🔥
-  Trust Factor   ███████░░░  71/100  🙂
-  Karma          ██░░░░░░░░  22/100  😬
+  Chaos Index    ████░░░░░░  41/100  🏚️
+  Ego Score      █████████░  89/100  🌌
+  Trust Factor   ███████░░░  71/100  😌
+  Karma          ██░░░░░░░░  22/100  😤
   Energy         🌥️  Cloudy
 
   ✨ overall vibe: impressive and exhausting
@@ -295,9 +295,9 @@ Five scores. No other tool measures these. That's the point.
 ```
 🎰  W T F   V I B E  🎰
 
-  Chaos Index    █░░░░░░░░░  14/100  🎁
-  Ego Score      █░░░░░░░░░  18/100  🎁
-  Trust Factor   ████████░░  82/100  🎁
+  Chaos Index    █░░░░░░░░░  14/100  🧘
+  Ego Score      █░░░░░░░░░  18/100  🤝
+  Trust Factor   ████████░░  82/100  😴
   Karma          █████████░  88/100  🎁
   Energy         ☀️  Sunny
 
