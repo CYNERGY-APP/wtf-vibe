@@ -27,7 +27,7 @@ Your code works. Your tests pass. Your linter is green.
 
 **But how does your code _feel_?**
 
-`wtf-vibe` is a Claude Code skill that rates your codebase's emotional energy across **5 dimensions** — Chaos, Ego, Trust, Karma, and Energy. Then it reveals the score with a **slot-machine animation** in your terminal.
+`wtf-vibe` is a Claude Code skill that rates your codebase's emotional energy across **5 dimensions** — Chaos, Ego, Trust, Karma, and Energy. Then it streams the scoreboard live in your terminal.
 
 Same insight as a 600-token code review. Delivered in **~80 tokens**. With personality.
 
@@ -96,15 +96,15 @@ You will scroll past this. You know you will.
 <td>
 
 ```
-🎰 W T F   V I B E 🎰
+🎰  W T F   V I B E  🎰
 
-Chaos Index   ████████░░  78  😰
-Ego Score     ██░░░░░░░░  23  🤝
-Trust Factor  ███░░░░░░░  29  😬
-Karma         ████░░░░░░  41  😐
-Energy        ⛈️ Stormy
+  Chaos Index    ████████░░  78/100  😰
+  Ego Score      ██░░░░░░░░  23/100  🤝
+  Trust Factor   ███░░░░░░░  29/100  😬
+  Karma          ████░░░░░░  41/100  😐
+  Energy         ⛈️  Stormy
 
-overall vibe: needs a hug
+  ✨ overall vibe: needs a hug
 
 💀 auth.js — 47 nested ifs.
    JWT secret is "secret123".
@@ -162,19 +162,13 @@ Zero dependencies. Just markdown.
 
 Five scores. No other tool measures these. That's the point.
 
-```
-╔═══════════════════════════════════════════════════════════╗
-║                    THE FIVE DIMENSIONS                    ║
-╠═══════════════════════════════════════════════════════════╣
-║                                                           ║
-║  CHAOS INDEX    ████████████░░░░░░░░  how tangled is it?  ║
-║  EGO SCORE      ████░░░░░░░░░░░░░░░░  is it showing off?  ║
-║  TRUST FACTOR   ██████░░░░░░░░░░░░░░  3am deploy safe?    ║
-║  KARMA          ████████████████░░░░  kind to next dev?   ║
-║  ENERGY         ⛈️  overall weather                        ║
-║                                                           ║
-╚═══════════════════════════════════════════════════════════╝
-```
+| Dimension | Range | Meaning |
+|-----------|-------|---------|
+| **Chaos Index** | 0-100 (low good) | how tangled is it? |
+| **Ego Score** | 0-100 (low good) | is it showing off? |
+| **Trust Factor** | 0-100 (high good) | 3am deploy safe? |
+| **Karma** | 0-100 (high good) | kind to next dev? |
+| **Energy** | weather emoji | overall climate |
 
 ### Chaos Index — _low is good_
 ```
@@ -214,11 +208,11 @@ Five scores. No other tool measures these. That's the point.
 
 ### Energy — _the weather report_
 ```
- ☀️  Sunny      Clean, calm, confident. A joy to work in.
- 🌤️  Clear      Solid, professional. Gets the job done.
- 🌥️  Cloudy     Works, but something feels off.
- ⛈️  Stormy     Tension everywhere. Storms incoming.
- 🌀  Hurricane  Active disaster. Every change breaks something.
+ ☀️   Sunny      Clean, calm, confident. A joy to work in.
+ 🌤️   Clear      Solid, professional. Gets the job done.
+ 🌥️   Cloudy     Works, but something feels off.
+ ⛈️   Stormy     Tension everywhere. Storms incoming.
+ 🌀   Hurricane  Active disaster. Every change breaks something.
 ```
 
 ---
@@ -230,19 +224,15 @@ Five scores. No other tool measures these. That's the point.
 > `/wtf-vibe`
 
 ```
- ╔══════════════════════════════════════════════════╗
- ║               WTF VIBE REPORT                    ║
- ╠══════════════════════════════════════════════════╣
- ║                                                  ║
- ║  Chaos Index    ███████░░░  67/100  😰          ║
- ║  Ego Score      █░░░░░░░░░  12/100  🤝          ║
- ║  Trust Factor   ███░░░░░░░  34/100  😬          ║
- ║  Karma          █████░░░░░  52/100  😐          ║
- ║  Energy         ⛈️ Stormy                        ║
- ║                                                  ║
- ╠══════════════════════════════════════════════════╣
- ║  Overall Vibe:  shipping fast, praying faster   ║
- ╚══════════════════════════════════════════════════╝
+🎰  W T F   V I B E  🎰
+
+  Chaos Index    ███████░░░  67/100  😰
+  Ego Score      █░░░░░░░░░  12/100  🤝
+  Trust Factor   ███░░░░░░░  34/100  😬
+  Karma          █████░░░░░  52/100  😐
+  Energy         ⛈️  Stormy
+
+  ✨ overall vibe: shipping fast, praying faster
 ```
 
 **🏆 Vibe Leaders**
@@ -269,19 +259,15 @@ Five scores. No other tool measures these. That's the point.
 > `/wtf-vibe src/core`
 
 ```
- ╔══════════════════════════════════════════════════╗
- ║               WTF VIBE REPORT                    ║
- ╠══════════════════════════════════════════════════╣
- ║                                                  ║
- ║  Chaos Index    ████░░░░░░  41/100  🏚️          ║
- ║  Ego Score      █████████░  89/100  🌌          ║
- ║  Trust Factor   ███████░░░  71/100  😌          ║
- ║  Karma          ██░░░░░░░░  22/100  😤          ║
- ║  Energy         🌥️ Cloudy                       ║
- ║                                                  ║
- ╠══════════════════════════════════════════════════╣
- ║  Overall Vibe:  impressive and exhausting       ║
- ╚══════════════════════════════════════════════════╝
+🎰  W T F   V I B E  🎰   ·   src/core
+
+  Chaos Index    ████░░░░░░  41/100  😐
+  Ego Score      █████████░  89/100  🔥
+  Trust Factor   ███████░░░  71/100  🙂
+  Karma          ██░░░░░░░░  22/100  😬
+  Energy         🌥️  Cloudy
+
+  ✨ overall vibe: impressive and exhausting
 ```
 
 **🏆 Vibe Leaders**
@@ -307,19 +293,15 @@ Five scores. No other tool measures these. That's the point.
 > `/wtf-vibe`
 
 ```
- ╔══════════════════════════════════════════════════╗
- ║               WTF VIBE REPORT                    ║
- ╠══════════════════════════════════════════════════╣
- ║                                                  ║
- ║  Chaos Index    █░░░░░░░░░  14/100  🧘          ║
- ║  Ego Score      █░░░░░░░░░  18/100  🤝          ║
- ║  Trust Factor   ████████░░  82/100  😴          ║
- ║  Karma          █████████░  88/100  🎁          ║
- ║  Energy         ☀️ Sunny                         ║
- ║                                                  ║
- ╠══════════════════════════════════════════════════╣
- ║  Overall Vibe:  immaculate                      ║
- ╚══════════════════════════════════════════════════╝
+🎰  W T F   V I B E  🎰
+
+  Chaos Index    █░░░░░░░░░  14/100  🎁
+  Ego Score      █░░░░░░░░░  18/100  🎁
+  Trust Factor   ████████░░  82/100  🎁
+  Karma          █████████░  88/100  🎁
+  Energy         ☀️  Sunny
+
+  ✨ overall vibe: immaculate
 ```
 
 **🧬 Vibe Summary**
@@ -379,6 +361,9 @@ Yes. Code vibes are universal. Spaghetti Python feels the same as spaghetti Java
 
 **Will my team actually use this?**
 They'll use it once out of curiosity. Then they'll compete for scores. Then it becomes a ritual. That's the loop.
+
+**Why does the scoreboard look "animated"?**
+Because Claude streams text character-by-character in your terminal. Each line of the scoreboard appears in sequence as it's typed. No scripts, no setup — just the natural way the agent renders text.
 
 ---
 
