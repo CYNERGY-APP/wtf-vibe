@@ -15,7 +15,6 @@
 <p align="center">
   <a href="#before--after">Before/After</a> •
   <a href="#install">Install</a> •
-  <a href="#the-slot-machine">Animation</a> •
   <a href="#dimensions">Dimensions</a> •
   <a href="#examples">Examples</a> •
   <a href="#usage">Usage</a> •
@@ -127,36 +126,12 @@ You will screenshot this. Send it to your team.
 
 ---
 
-## The slot machine
-
-When you run `/wtf-vibe`, the scores don't just appear. They **spin**.
-
-```
-  Chaos Index   ████░░░░░░  ?7?/100  ?     ← spinning, magenta
-  Ego Score     ░░░░░░░░░░  ???/100  ?     ← waiting
-  Trust Factor  ░░░░░░░░░░  ???/100  ?
-  Karma         ░░░░░░░░░░  ???/100  ?
-  Energy        ?
-
-         ⬇  ka-CHUNK  ⬇
-
-  Chaos Index   ████████░░   78/100  😰   ← LOCKED, yellow flash
-  Ego Score     ██░░░░░░░░  ?2?/100  ?     ← now spinning
-  ...
-```
-
-Each dimension spins for ~1 second, decelerates, **flashes yellow when it locks in**, then settles into final color (red/yellow/green based on score). Then the **energy emoji cycles** through ☀️→🌤️→🌥️→⛈️→🌀 before settling. Finally, the verdict types out one character at a time.
-
-**Total runtime: ~6 seconds.** Perfect for a Twitter clip.
-
----
-
 ## Install
 
 **One line. That's it.**
 
 ```bash
-git clone https://github.com/CYNERGY-APP/wtf-vibe ~/.claude/skills/wtf-vibe
+mkdir -p ~/.claude/skills/wtf-vibe && curl -o ~/.claude/skills/wtf-vibe/SKILL.md https://raw.githubusercontent.com/CYNERGY-APP/wtf-vibe/main/.claude/skills/wtf-vibe/SKILL.md
 ```
 
 That's the global install — works in every project on your machine.
@@ -164,22 +139,22 @@ That's the global install — works in every project on your machine.
 **Project-only install:**
 
 ```bash
-git clone https://github.com/CYNERGY-APP/wtf-vibe .claude/skills/wtf-vibe
+mkdir -p .claude/skills/wtf-vibe && curl -o .claude/skills/wtf-vibe/SKILL.md https://raw.githubusercontent.com/CYNERGY-APP/wtf-vibe/main/.claude/skills/wtf-vibe/SKILL.md
 ```
 
-**Other agents:** drop the `wtf-vibe/` folder into your agent's skills directory.
+**Other agents:** drop `SKILL.md` into your agent's skills directory.
 
 | Agent | Path |
 |-------|------|
-| Claude Code | `~/.claude/skills/wtf-vibe/` |
-| Cursor | `.cursor/skills/wtf-vibe/` |
-| Codex CLI | `.codex/skills/wtf-vibe/` |
-| Gemini CLI | `.gemini/skills/wtf-vibe/` |
-| Windsurf | `.windsurf/skills/wtf-vibe/` |
+| Claude Code | `~/.claude/skills/wtf-vibe/SKILL.md` |
+| Cursor | `.cursor/skills/wtf-vibe/SKILL.md` |
+| Codex CLI | `.codex/skills/wtf-vibe/SKILL.md` |
+| Gemini CLI | `.gemini/skills/wtf-vibe/SKILL.md` |
+| Windsurf | `.windsurf/skills/wtf-vibe/SKILL.md` |
 
 **Then restart your session and type `/wtf-vibe`.**
 
-Requirements: Python 3 (already installed on macOS/Linux). Zero dependencies.
+Zero dependencies. Just markdown.
 
 ---
 
@@ -362,7 +337,7 @@ Five scores. No other tool measures these. That's the point.
 ```
 
 **What you get:**
-1. **The Slot Machine** — animated reveal of all 5 dimensions. ~6 seconds.
+1. **The Scoreboard** — all 5 dimensions, streamed live as Claude types it.
 2. **Vibe Leaders** — the good code. Devs rarely hear what they're doing RIGHT.
 3. **Vibe Killers** — the bad code. Named, shamed, and roasted with love.
 4. **Vibe Summary** — your codebase as a person, in 2 sentences.
@@ -402,12 +377,6 @@ Yes, wrapped in personality. Every score maps to real patterns — cyclomatic co
 **Does it work with any language?**
 Yes. Code vibes are universal. Spaghetti Python feels the same as spaghetti Java.
 
-**Does the slot machine work in tmux/SSH?**
-Yes. Pure ANSI escape codes, no nerd fonts required. Falls back to static rendering when not in a TTY (so CI logs still work).
-
-**Can I disable the animation?**
-The animator script accepts `--no-animate`. We don't expose this through the skill yet — open a PR if you need it.
-
 **Will my team actually use this?**
 They'll use it once out of curiosity. Then they'll compete for scores. Then it becomes a ritual. That's the loop.
 
@@ -415,7 +384,7 @@ They'll use it once out of curiosity. Then they'll compete for scores. Then it b
 
 ## Cross-platform
 
-Standard `.md` skill format. Animation is pure Python 3 stdlib.
+Standard `.md` skill format. Just markdown — works anywhere skills work.
 
 | Agent | Status |
 |-------|--------|

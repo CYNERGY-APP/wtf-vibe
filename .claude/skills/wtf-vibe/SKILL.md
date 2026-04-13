@@ -63,25 +63,38 @@ The overall emotional state of the codebase, synthesized from all dimensions:
 4. **Consider context** — a hackathon prototype has different vibe expectations than a payment processing system.
 5. **Be specific** — every score needs receipts. Name files. Quote lines. Point at the evidence.
 
-## Output format
+## Output format — the streaming reveal
 
-After analysis, **render the scoreboard via the animator script** — this is the slot-machine reveal users came for.
+Claude Code streams your text output to the user character-by-character. Use this to fake a slot-machine reveal: print the scoreboard with each dimension on its own line, in order, so they appear sequentially in the user's terminal.
 
-Run it via the Bash tool:
+**Print exactly this format as a single text block (no preamble, no commentary, just the scoreboard):**
 
-```bash
-python3 ~/.claude/skills/wtf-vibe/animate.py \
-    --chaos <int> --ego <int> --trust <int> --karma <int> \
-    --energy <sunny|clear|cloudy|stormy|hurricane> \
-    --summary "<one-line vibe summary, max ~50 chars>" \
-    --label "<optional path label>"
+```
+🎰  W T F   V I B E  🎰   ·   <label-or-codebase-name>
+──────────────────────────────────────────────────────
+
+  🎲 Chaos Index    [bar]  XX/100  [emoji]  ✓
+  🎲 Ego Score      [bar]  XX/100  [emoji]  ✓
+  🎲 Trust Factor   [bar]  XX/100  [emoji]  ✓
+  🎲 Karma          [bar]  XX/100  [emoji]  ✓
+  🌦️  Energy         [weather-emoji]  [Label]              ✓
+
+──────────────────────────────────────────────────────
+  ✨ overall vibe:  <one-line summary, ~50 chars max>
+──────────────────────────────────────────────────────
 ```
 
-The script handles all rendering: spinning slot reels, lock-in flash, energy reveal, typewriter verdict. **Do NOT print the scoreboard yourself** — the animator owns it. Then continue with the textual sections (Vibe Leaders, Killers, Summary, Prescription) as plain text.
+**Bar:** 10 chars, `█` for filled and `░` for empty. Score 78 → `████████░░`. Score 23 → `██░░░░░░░░`.
 
-Energy values: `sunny`, `clear`, `cloudy`, `stormy`, `hurricane`.
+**Score emoji** (per dimension polarity):
 
-For Chaos and Ego, LOW is good. For Trust and Karma, HIGH is good.
+For **Chaos** and **Ego** (low is good): 0-20 `🎁`, 21-40 `🙂`, 41-60 `😐`, 61-80 `😰`, 81-100 `🔥`
+
+For **Trust** and **Karma** (high is good): 0-20 `💀`, 21-40 `😬`, 41-60 `😐`, 61-80 `🙂`, 81-100 `🎁`
+
+**Energy emojis:** Sunny `☀️`, Clear `🌤️`, Cloudy `🌥️`, Stormy `⛈️`, Hurricane `🌀`
+
+Print the scoreboard FIRST, as a single text block, before any other commentary. The character-by-character streaming creates the reveal animation natively — no scripts needed.
 
 ## After the scoreboard
 
