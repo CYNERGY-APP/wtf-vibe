@@ -98,15 +98,15 @@ One line. No setup. No config.
 
 | Agent | Command |
 |-------|---------|
-| **Claude Code** | `curl -o .claude/skills/wtf-vibe.md https://raw.githubusercontent.com/CYNERGY-APP/wtf-vibe/main/.claude/skills/wtf-vibe.md` |
-| **Cursor** | Copy `wtf-vibe.md` to `.cursor/skills/` |
-| **Codex CLI** | Copy `wtf-vibe.md` to `.codex/skills/` |
-| **Gemini CLI** | Copy `wtf-vibe.md` to `.gemini/skills/` |
-| **Any agent** | Drop `wtf-vibe.md` in your agent's skill directory |
+| **Claude Code** | `mkdir -p .claude/skills/wtf-vibe && curl -o .claude/skills/wtf-vibe/SKILL.md https://raw.githubusercontent.com/CYNERGY-APP/wtf-vibe/main/.claude/skills/wtf-vibe/SKILL.md` |
+| **Cursor** | Copy `SKILL.md` to `.cursor/skills/wtf-vibe/SKILL.md` |
+| **Codex CLI** | Copy `SKILL.md` to `.codex/skills/wtf-vibe/SKILL.md` |
+| **Gemini CLI** | Copy `SKILL.md` to `.gemini/skills/wtf-vibe/SKILL.md` |
+| **Any agent** | Place `SKILL.md` in your agent's skills directory |
 
 Global install (all projects):
 ```bash
-curl -o ~/.claude/skills/wtf-vibe.md https://raw.githubusercontent.com/CYNERGY-APP/wtf-vibe/main/.claude/skills/wtf-vibe.md
+mkdir -p ~/.claude/skills/wtf-vibe && curl -o ~/.claude/skills/wtf-vibe/SKILL.md https://raw.githubusercontent.com/CYNERGY-APP/wtf-vibe/main/.claude/skills/wtf-vibe/SKILL.md
 ```
 
 Then just type `/wtf-vibe` and watch.
