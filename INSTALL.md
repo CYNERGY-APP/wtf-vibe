@@ -1,26 +1,42 @@
 # Install
 
-## One line. That's it.
+## One line
 
+**Global** (works in every project):
 ```bash
-mkdir -p .claude/skills/wtf-vibe && curl -o .claude/skills/wtf-vibe/SKILL.md https://raw.githubusercontent.com/CYNERGY-APP/wtf-vibe/main/.claude/skills/wtf-vibe/SKILL.md
+git clone https://github.com/CYNERGY-APP/wtf-vibe ~/.claude/skills/wtf-vibe
 ```
 
-## Global install (all your projects)
-
+**Project-only**:
 ```bash
-mkdir -p ~/.claude/skills/wtf-vibe && curl -o ~/.claude/skills/wtf-vibe/SKILL.md https://raw.githubusercontent.com/CYNERGY-APP/wtf-vibe/main/.claude/skills/wtf-vibe/SKILL.md
+git clone https://github.com/CYNERGY-APP/wtf-vibe .claude/skills/wtf-vibe
 ```
 
 ## Other agents
 
-| Agent | Where to put it |
-|-------|----------------|
-| Cursor | `.cursor/skills/wtf-vibe/SKILL.md` |
-| Codex CLI | `.codex/skills/wtf-vibe/SKILL.md` |
-| Gemini CLI | `.gemini/skills/wtf-vibe/SKILL.md` |
-| Windsurf | `.windsurf/skills/wtf-vibe/SKILL.md` |
+| Agent | Path |
+|-------|------|
+| Cursor | `.cursor/skills/wtf-vibe/` |
+| Codex CLI | `.codex/skills/wtf-vibe/` |
+| Gemini CLI | `.gemini/skills/wtf-vibe/` |
+| Windsurf | `.windsurf/skills/wtf-vibe/` |
 
 ## Then what?
 
-**Restart your session** (skills load at startup, not mid-session), then type `/wtf-vibe`.
+**Restart your session** (skills load at startup), then type `/wtf-vibe`.
+
+## Requirements
+
+Python 3 (already installed on macOS/Linux). Zero dependencies.
+
+## Update
+
+```bash
+cd ~/.claude/skills/wtf-vibe && git pull
+```
+
+## Uninstall
+
+```bash
+rm -rf ~/.claude/skills/wtf-vibe
+```

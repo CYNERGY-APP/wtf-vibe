@@ -15,6 +15,7 @@
 <p align="center">
   <a href="#before--after">Before/After</a> •
   <a href="#install">Install</a> •
+  <a href="#the-slot-machine">Animation</a> •
   <a href="#dimensions">Dimensions</a> •
   <a href="#examples">Examples</a> •
   <a href="#usage">Usage</a> •
@@ -27,15 +28,17 @@ Your code works. Your tests pass. Your linter is green.
 
 **But how does your code _feel_?**
 
-`wtf-vibe` is a Claude Code skill that rates your codebase's emotional energy across **5 dimensions** — Chaos, Ego, Trust, Karma, and Energy. It tells you what no tool ever tells you: **the vibe**.
+`wtf-vibe` is a Claude Code skill that rates your codebase's emotional energy across **5 dimensions** — Chaos, Ego, Trust, Karma, and Energy. Then it reveals the score with a **slot-machine animation** in your terminal.
 
-Not a linter. Not a test suite. The friend who reviews your code and somehow makes the feedback entertaining.
+Same insight as a 600-token code review. Delivered in **~80 tokens**. With personality.
+
+Not a linter. Not a test suite. The friend who reviews your code, makes you laugh, and somehow uses 7x fewer tokens.
 
 ---
 
 ## Before / After
 
-You asked for a code review. Here's what you got:
+Same codebase. Same problems. Two completely different vibes.
 
 <table>
 <tr>
@@ -46,70 +49,137 @@ You asked for a code review. Here's what you got:
 <td>
 
 ```
-The authentication module could benefit
-from additional error handling. Consider
-refactoring the nested conditionals for
-improved readability. The JWT
-implementation follows standard patterns
-but may need additional validation.
-Some functions exceed recommended
-complexity thresholds.
+I've completed a thorough analysis of your
+authentication module. Overall, the code
+demonstrates a functional implementation,
+however there are several areas that could
+benefit from refinement to improve
+maintainability and security posture.
+
+The authentication module would benefit
+from additional error handling, particularly
+around the JWT verification flow. I noticed
+that the nested conditional logic in the
+login handler exceeds recommended cyclomatic
+complexity thresholds and should be
+considered for refactoring to improve
+readability and reduce cognitive load on
+future maintainers.
+
+Additionally, the JWT secret appears to be
+hardcoded in the source file. While this
+follows a common pattern, you may want to
+consider extracting it to an environment
+variable to align with security best
+practices and to facilitate easier rotation
+in production environments.
+
+Some functions in this module exceed the
+recommended length and could be decomposed
+into smaller, more focused units. The error
+handling strategy is inconsistent across
+endpoints and could benefit from
+standardization. Test coverage is below
+the recommended threshold.
+
+I'd recommend prioritizing the security
+items first, followed by the refactoring
+opportunities. Let me know if you'd like
+me to elaborate on any of these points or
+draft specific implementation suggestions.
 ```
+
+**~480 tokens of careful corporate hedging.**
+
+You will scroll past this. You know you will.
 
 </td>
 <td>
 
 ```
-╔══════════════════════════════════════╗
-║         WTF VIBE REPORT             ║
-╠══════════════════════════════════════╣
-║                                      ║
-║  Chaos Index:   78/100  😰          ║
-║  Ego Score:     23/100  🤝          ║
-║  Trust Factor:  29/100  😬          ║
-║  Karma:         41/100  😐          ║
-║  Energy:        ⛈️ Stormy            ║
-║                                      ║
-╠══════════════════════════════════════╣
-║  Overall Vibe:  needs a hug          ║
-╚══════════════════════════════════════╝
+🎰 W T F   V I B E 🎰
 
-💀 auth.js — 47 nested ifs. The JWT
-   secret is "secret123". It's trying
-   its best. Its best is not enough.
+Chaos Index   ████████░░  78  😰
+Ego Score     ██░░░░░░░░  23  🤝
+Trust Factor  ███░░░░░░░  29  😬
+Karma         ████░░░░░░  41  😐
+Energy        ⛈️ Stormy
 
-🧬 "This codebase is a haunted house.
-    There are rooms nobody has entered
-    in years. The tests pass, but at
-    what cost?"
+overall vibe: needs a hug
+
+💀 auth.js — 47 nested ifs.
+   JWT secret is "secret123".
+   Trying its best. Not enough.
+
+🧬 "haunted house. tests pass,
+    but at what cost?"
 ```
+
+**~85 tokens. Same insight. With personality.**
+
+You will screenshot this. Send it to your team.
 
 </td>
 </tr>
 </table>
 
-Same code. One you'll ignore. One you'll screenshot.
+> **~82% fewer tokens. 100% more shareable.**
+
+---
+
+## The slot machine
+
+When you run `/wtf-vibe`, the scores don't just appear. They **spin**.
+
+```
+  Chaos Index   ████░░░░░░  ?7?/100  ?     ← spinning, magenta
+  Ego Score     ░░░░░░░░░░  ???/100  ?     ← waiting
+  Trust Factor  ░░░░░░░░░░  ???/100  ?
+  Karma         ░░░░░░░░░░  ???/100  ?
+  Energy        ?
+
+         ⬇  ka-CHUNK  ⬇
+
+  Chaos Index   ████████░░   78/100  😰   ← LOCKED, yellow flash
+  Ego Score     ██░░░░░░░░  ?2?/100  ?     ← now spinning
+  ...
+```
+
+Each dimension spins for ~1 second, decelerates, **flashes yellow when it locks in**, then settles into final color (red/yellow/green based on score). Then the **energy emoji cycles** through ☀️→🌤️→🌥️→⛈️→🌀 before settling. Finally, the verdict types out one character at a time.
+
+**Total runtime: ~6 seconds.** Perfect for a Twitter clip.
 
 ---
 
 ## Install
 
-One line. No setup. No config.
+**One line. That's it.**
 
-| Agent | Command |
-|-------|---------|
-| **Claude Code** | `mkdir -p .claude/skills/wtf-vibe && curl -o .claude/skills/wtf-vibe/SKILL.md https://raw.githubusercontent.com/CYNERGY-APP/wtf-vibe/main/.claude/skills/wtf-vibe/SKILL.md` |
-| **Cursor** | Copy `SKILL.md` to `.cursor/skills/wtf-vibe/SKILL.md` |
-| **Codex CLI** | Copy `SKILL.md` to `.codex/skills/wtf-vibe/SKILL.md` |
-| **Gemini CLI** | Copy `SKILL.md` to `.gemini/skills/wtf-vibe/SKILL.md` |
-| **Any agent** | Place `SKILL.md` in your agent's skills directory |
-
-Global install (all projects):
 ```bash
-mkdir -p ~/.claude/skills/wtf-vibe && curl -o ~/.claude/skills/wtf-vibe/SKILL.md https://raw.githubusercontent.com/CYNERGY-APP/wtf-vibe/main/.claude/skills/wtf-vibe/SKILL.md
+git clone https://github.com/CYNERGY-APP/wtf-vibe ~/.claude/skills/wtf-vibe
 ```
 
-Then just type `/wtf-vibe` and watch.
+That's the global install — works in every project on your machine.
+
+**Project-only install:**
+
+```bash
+git clone https://github.com/CYNERGY-APP/wtf-vibe .claude/skills/wtf-vibe
+```
+
+**Other agents:** drop the `wtf-vibe/` folder into your agent's skills directory.
+
+| Agent | Path |
+|-------|------|
+| Claude Code | `~/.claude/skills/wtf-vibe/` |
+| Cursor | `.cursor/skills/wtf-vibe/` |
+| Codex CLI | `.codex/skills/wtf-vibe/` |
+| Gemini CLI | `.gemini/skills/wtf-vibe/` |
+| Windsurf | `.windsurf/skills/wtf-vibe/` |
+
+**Then restart your session and type `/wtf-vibe`.**
+
+Requirements: Python 3 (already installed on macOS/Linux). Zero dependencies.
 
 ---
 
@@ -189,14 +259,14 @@ Five scores. No other tool measures these. That's the point.
  ║               WTF VIBE REPORT                    ║
  ╠══════════════════════════════════════════════════╣
  ║                                                  ║
- ║  Chaos Index:   67/100  😰                      ║
- ║  Ego Score:     12/100  🤝                      ║
- ║  Trust Factor:  34/100  😬                      ║
- ║  Karma:         52/100  😐                      ║
- ║  Energy:        ⛈️ Stormy                        ║
+ ║  Chaos Index    ███████░░░  67/100  😰          ║
+ ║  Ego Score      █░░░░░░░░░  12/100  🤝          ║
+ ║  Trust Factor   ███░░░░░░░  34/100  😬          ║
+ ║  Karma          █████░░░░░  52/100  😐          ║
+ ║  Energy         ⛈️ Stormy                        ║
  ║                                                  ║
  ╠══════════════════════════════════════════════════╣
- ║  Overall Vibe:  shipping fast, praying faster    ║
+ ║  Overall Vibe:  shipping fast, praying faster   ║
  ╚══════════════════════════════════════════════════╝
 ```
 
@@ -228,14 +298,14 @@ Five scores. No other tool measures these. That's the point.
  ║               WTF VIBE REPORT                    ║
  ╠══════════════════════════════════════════════════╣
  ║                                                  ║
- ║  Chaos Index:   41/100  🏚️                      ║
- ║  Ego Score:     89/100  🌌                      ║
- ║  Trust Factor:  71/100  😌                      ║
- ║  Karma:         22/100  😤                      ║
- ║  Energy:        🌥️ Cloudy                       ║
+ ║  Chaos Index    ████░░░░░░  41/100  🏚️          ║
+ ║  Ego Score      █████████░  89/100  🌌          ║
+ ║  Trust Factor   ███████░░░  71/100  😌          ║
+ ║  Karma          ██░░░░░░░░  22/100  😤          ║
+ ║  Energy         🌥️ Cloudy                       ║
  ║                                                  ║
  ╠══════════════════════════════════════════════════╣
- ║  Overall Vibe:  impressive and exhausting        ║
+ ║  Overall Vibe:  impressive and exhausting       ║
  ╚══════════════════════════════════════════════════╝
 ```
 
@@ -251,7 +321,7 @@ Five scores. No other tool measures these. That's the point.
 > "This codebase is a fresh bootcamp grad who learned every design pattern in one weekend and used ALL of them. The enthusiasm is admirable. The abstractions are not."
 
 **💊 Vibe Prescription**
-1. Delete `AbstractBaseEntityServiceProviderFactory.ts`. I don't know what it does. Neither does anyone else. Delete it and see what breaks. If nothing breaks, you have your answer.
+1. Delete `AbstractBaseEntityServiceProviderFactory.ts`. I don't know what it does. Neither does anyone else. Delete it and see what breaks.
 2. The DI container is solving a problem that doesn't exist yet. Replace with direct imports. You're a startup, not Spring Boot.
 3. Rename things so a human can read them. `UserService` > `AbstractUserServiceImpl`.
 
@@ -266,30 +336,20 @@ Five scores. No other tool measures these. That's the point.
  ║               WTF VIBE REPORT                    ║
  ╠══════════════════════════════════════════════════╣
  ║                                                  ║
- ║  Chaos Index:   14/100  🧘                      ║
- ║  Ego Score:     18/100  🤝                      ║
- ║  Trust Factor:  82/100  😴                      ║
- ║  Karma:         88/100  🎁                      ║
- ║  Energy:        ☀️ Sunny                         ║
+ ║  Chaos Index    █░░░░░░░░░  14/100  🧘          ║
+ ║  Ego Score      █░░░░░░░░░  18/100  🤝          ║
+ ║  Trust Factor   ████████░░  82/100  😴          ║
+ ║  Karma          █████████░  88/100  🎁          ║
+ ║  Energy         ☀️ Sunny                         ║
  ║                                                  ║
  ╠══════════════════════════════════════════════════╣
- ║  Overall Vibe:  immaculate                       ║
+ ║  Overall Vibe:  immaculate                      ║
  ╚══════════════════════════════════════════════════╝
 ```
-
-**🏆 Vibe Leaders**
-- Honestly? The whole thing. Consistent naming, small files, clear boundaries. Whoever wrote this cares.
-
-**💀 Vibe Killers**
-- `scripts/deploy.sh` — the only file that radiates chaos. 200 lines, no comments, nested if-else from hell. Every codebase has one cursed shell script. This is yours.
 
 **🧬 Vibe Summary**
 
 > "This codebase is a senior dev who's been through three rewrites and just wants things to work. It's tired, but reliable. Buy it a coffee."
-
-**💊 Vibe Prescription**
-1. Fix `deploy.sh`. It's the one dark room in an otherwise well-lit house.
-2. That's it. You're doing great. Seriously.
 
 ---
 
@@ -302,11 +362,25 @@ Five scores. No other tool measures these. That's the point.
 ```
 
 **What you get:**
-1. **The Scoreboard** — five scores, one glance. Screenshot it. Share it. Compete.
+1. **The Slot Machine** — animated reveal of all 5 dimensions. ~6 seconds.
 2. **Vibe Leaders** — the good code. Devs rarely hear what they're doing RIGHT.
 3. **Vibe Killers** — the bad code. Named, shamed, and roasted with love.
-4. **Vibe Summary** — your codebase described as a person. In 2 sentences.
+4. **Vibe Summary** — your codebase as a person, in 2 sentences.
 5. **Vibe Prescription** — specific fixes. Not "add comments." Real fixes.
+
+---
+
+## Why it uses fewer tokens
+
+Most code review prompts ask for "thorough analysis" and Claude responds with paragraphs of corporate hedging. wtf-vibe asks for a **scoreboard + 3 callouts + 1 metaphor** — and that's it.
+
+| Tool | Avg tokens per review | Memorable? |
+|------|----------------------|------------|
+| Standard `/review` | ~600-1000 | No, you scroll past |
+| Generic linter output | ~200-400 | No, you ignore |
+| **wtf-vibe** | **~80-150** | Yes, you screenshot |
+
+Same coverage of the actual issues. Just delivered through pattern recognition + personality instead of throat-clearing.
 
 ---
 
@@ -328,20 +402,20 @@ Yes, wrapped in personality. Every score maps to real patterns — cyclomatic co
 **Does it work with any language?**
 Yes. Code vibes are universal. Spaghetti Python feels the same as spaghetti Java.
 
-**Can I use this in CI/CD?**
-Not yet. But imagine: `PR blocked: Chaos Index exceeded 80. Fix the vibe before merging.`
+**Does the slot machine work in tmux/SSH?**
+Yes. Pure ANSI escape codes, no nerd fonts required. Falls back to static rendering when not in a TTY (so CI logs still work).
+
+**Can I disable the animation?**
+The animator script accepts `--no-animate`. We don't expose this through the skill yet — open a PR if you need it.
 
 **Will my team actually use this?**
 They'll use it once out of curiosity. Then they'll compete for scores. Then it becomes a ritual. That's the loop.
-
-**How is this different from a linter?**
-A linter tells you semicolons are missing. **wtf-vibe** tells you your codebase is having an existential crisis. Different tools. Different jobs.
 
 ---
 
 ## Cross-platform
 
-Standard `.md` skill format. Works everywhere:
+Standard `.md` skill format. Animation is pure Python 3 stdlib.
 
 | Agent | Status |
 |-------|--------|
@@ -351,7 +425,6 @@ Standard `.md` skill format. Works everywhere:
 | Gemini CLI | ✅ |
 | Windsurf | ✅ |
 | Copilot | ✅ |
-| Any `.md` skill agent | ✅ |
 
 ---
 

@@ -65,34 +65,23 @@ The overall emotional state of the codebase, synthesized from all dimensions:
 
 ## Output format
 
-Always produce the Vibe Report in this exact format:
+After analysis, **render the scoreboard via the animator script** — this is the slot-machine reveal users came for.
 
-```
- ╔══════════════════════════════════════════════════╗
- ║               WTF VIBE REPORT                    ║
- ╠══════════════════════════════════════════════════╣
- ║                                                  ║
- ║  Chaos Index:   XX/100  [emoji]                  ║
- ║  Ego Score:     XX/100  [emoji]                  ║
- ║  Trust Factor:  XX/100  [emoji]                  ║
- ║  Karma:         XX/100  [emoji]                  ║
- ║  Energy:        [weather emoji] [label]          ║
- ║                                                  ║
- ╠══════════════════════════════════════════════════╣
- ║  Overall Vibe:  [one-line summary]               ║
- ╚══════════════════════════════════════════════════╝
+Run it via the Bash tool:
+
+```bash
+python3 ~/.claude/skills/wtf-vibe/animate.py \
+    --chaos <int> --ego <int> --trust <int> --karma <int> \
+    --energy <sunny|clear|cloudy|stormy|hurricane> \
+    --summary "<one-line vibe summary, max ~50 chars>" \
+    --label "<optional path label>"
 ```
 
-Emoji guide for scores:
-- 0-20: Use a strong positive/negative emoji depending on dimension polarity
-- 21-40: Mild
-- 41-60: Neutral
-- 61-80: Concerning (or great, depending on polarity)
-- 81-100: Extreme
+The script handles all rendering: spinning slot reels, lock-in flash, energy reveal, typewriter verdict. **Do NOT print the scoreboard yourself** — the animator owns it. Then continue with the textual sections (Vibe Leaders, Killers, Summary, Prescription) as plain text.
+
+Energy values: `sunny`, `clear`, `cloudy`, `stormy`, `hurricane`.
 
 For Chaos and Ego, LOW is good. For Trust and Karma, HIGH is good.
-
-Weather emojis: Sunny = `☀️`, Clear = `🌤️`, Cloudy = `🌥️`, Stormy = `⛈️`, Hurricane = `🌀`
 
 ## After the scoreboard
 
